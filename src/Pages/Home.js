@@ -1,118 +1,68 @@
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
+import React from "react";
 import profile from "../assets/profile.jpg";
+import "./Home.css"; // Import your custom CSS file for Home component
 
 const personalDetails = {
   name: "Gunwant Singh Sidhu",
   tagline: "A cheerful, enthusiastic coder....who loves making new things",
   img: profile,
   about:
-    "Growing up I had curiosity in learning how things worked....which attracted me to coding because I love building new things.",
+    "Growing up, I had a curious mind, always seeking to understand how things worked. This curiosity led me to coding, where I discovered my love for building new things.",
   skills: ["C++", "C", "JAVA", "Python", "HTML", "CSS"],
+  quotes: [
+    "Programs must be written for people to read, and only incidentally for machines to execute. - Harold Abelson",
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "Programming isn’t about what you know; it’s about what you can figure out. - Chris Pine",
+    "The more I learn, the more I realize how much I don't know. - Albert Einstein",
+    "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer",
+    "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+  ],
 };
 
 function Home() {
-  const { name, tagline, img, about, skills } = personalDetails;
-  const h11 = useRef();
-  const h12 = useRef();
-  const h13 = useRef();
-  const myimageref = useRef();
-
-  useEffect(() => {
-    const tl = gsap.timeline();
-    tl.from(
-      h11.current,
-      {
-        x: "-100%",
-        delay: 0.8,
-        opacity: 0,
-        duration: 2,
-        ease: "Power3.easeOut",
-      },
-      "<"
-    )
-      .from(
-        h12.current,
-        {
-          x: "-100%",
-          delay: 0.5,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-      )
-      .from(
-        h13.current,
-        {
-          x: "-100%",
-          delay: 0.1,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-      )
-      .from(
-        myimageref.current,
-        {
-          x: "200%",
-          delay: 0.5,
-          opacity: 0,
-          duration: 2,
-          ease: "Power3.easeOut",
-        },
-        "<"
-      );
-  }, []);
+  const { name, tagline, img, about, skills, quotes } = personalDetails;
 
   return (
-    <main className="container mx-auto max-w-screen-lg px-4 md:px-8 pt-10 section md:flex justify-between items-center">
-      <div>
-        <h1
-          ref={h11}
-          className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold mb-4 md:mb-8"
-        >
-          Hi, 👋
+    <main className="home-container">
+      <div className="home-content">
+        <h1 className="greeting">
+          Hi, <span role="img" aria-label="waving-hand">👋</span>
           <br />
           My Name is
         </h1>
-        <h1
-          ref={h12}
-          className="text-2xl bg-clip-text bg-gradient text-transparent md:text-4xl xl:text-5xl xl:leading-tight font-bold mb-4 md:mb-8"
-        >
+        <h1 className="name">
           {name}
         </h1>
-        <h2
-          ref={h13}
-          className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold"
-        >
+        <h2 className="tagline">
           {tagline}
         </h2>
       </div>
-      <div className="mt-10 md:mt-0 md:w-1/2 md:ml-8">
+      <div className="home-image">
         <img
-          ref={myimageref}
-          className="w-64 h-64 md:w-96 md:h-96 rounded-full border-4 border-white shadow-lg object-cover"
+          className="profile-image"
           src={img}
           alt="Gunwant Singh Sidhu"
         />
       </div>
-      <div className="md:w-1/2 mt-10">
-        <h2 className="text-3xl text-dark-heading dark:text-light-heading font-bold mb-4">
-          Let Me Introduce Myself
-        </h2>
-        <p className="text-lg text-content">{about}</p>
-        <div className="mt-6">
-          <h3 className="text-xl font-semibold">Skills:</h3>
-          <ul className="list-disc list-inside">
+      <div className="home-about">
+        <h2 className="about-heading">Let Me Introduce Myself</h2>
+        <p className="about-text">{about}</p>
+        <div className="skills">
+          <h3 className="skills-heading">Skills:</h3>
+          <ul className="skills-list">
             {skills.map((skill) => (
-              <li key={skill} className="text-lg">
-                {skill}
-              </li>
+              <li key={skill} className="skill">{skill}</li>
             ))}
           </ul>
         </div>
+      </div>
+      <div className="quotes-section">
+        <h2 className="quotes-heading">Meaningful Quotes:</h2>
+        <ul className="quotes-list">
+          {quotes.map((quote, index) => (
+            <li key={index} className="quote-item">"{quote}"</li>
+          ))}
+        </ul>
       </div>
     </main>
   );

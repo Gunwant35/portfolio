@@ -1,0 +1,39 @@
+/* Add your custom styles to make the header more beautiful */
+.container {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  nav ul li {
+    margin: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.2s ease-in-out;
+  }
+  
+  nav ul li:hover {
+    border-bottom-color: #6b46c1; /* Add your desired color here */
+  }
+  
+  /* Adjust the positioning of the social media icons */
+  .icon-group {
+    margin-right: 2rem;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .icon:hover {
+    color: #6b46c1; /* Add your desired color here */
+  }
+  

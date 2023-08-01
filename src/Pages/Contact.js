@@ -54,58 +54,15 @@ class Contact extends React.Component {
           <a href={`tel:${phone}`}>{phone}</a>
         </h3>
         <div className="contact-me-section" style={{ marginTop: "80px" }}>
-          <style>
-            {`
-              .contact-me-section {
-                background-color: #f5f5f5;
-                padding: 50px 0;
-                text-align: center;
-              }
-              
-              .container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 0 15px;
-              }
-              
-              h1 {
-                font-size: 2.1em;
-                margin-bottom: 30px;
-              }
-              
-              .form-input {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                font-size: 16px;
-                margin-bottom: 20px;
-              }
-              
-              .submit-button {
-                background-color: #4caf50;
-                color: #fff;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                cursor: pointer;
-              }
-              
-              .submit-button:hover {
-                background-color: #45a049;
-              }
-            `}
-          </style>
-          <div className="container">
-            <form onSubmit={this.handleSubmit}>
+          <div className="container" style={styles.formContainer}>
+            <form onSubmit={this.handleSubmit} action="https://formspree.io/f/moqojlgl" method="POST">
               <input
                 type="text"
                 id="name"
                 name="name"
                 value={name}
                 onChange={this.handleInputChange}
-                className="form-input"
+                style={styles.formInput}
                 placeholder="Name"
                 required
               />
@@ -116,7 +73,7 @@ class Contact extends React.Component {
                 name="email"
                 value={userEmail}
                 onChange={this.handleInputChange}
-                className="form-input"
+                style={styles.formInput}
                 placeholder="Email"
                 required
               />
@@ -126,12 +83,12 @@ class Contact extends React.Component {
                 name="message"
                 value={message}
                 onChange={this.handleInputChange}
-                className="form-input"
+                style={styles.formTextarea}
                 placeholder="Message"
                 required
               />
               <br />
-              <button type="submit" className="submit-button">
+              <button type="submit" style={styles.submitButton}>
                 Submit
               </button>
             </form>
@@ -143,3 +100,38 @@ class Contact extends React.Component {
 }
 
 export default Contact;
+
+// Add the CSS styles as an object here
+const styles = {
+  formContainer: {
+    maxWidth: "600px",
+    margin: "0 auto",
+    padding: "20px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+  },
+  formInput: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "15px",
+    border: "1px solid #ccc",
+    borderRadius: "3px",
+  },
+  formTextarea: {
+    width: "100%",
+    padding: "10px",
+    marginBottom: "15px",
+    border: "1px solid #ccc",
+    borderRadius: "3px",
+    resize: "vertical",
+    height: "150px",
+  },
+  submitButton: {
+    backgroundColor: "#4caf50",
+    color: "white",
+    padding: "10px 20px",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+};

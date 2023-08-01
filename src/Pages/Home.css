@@ -1,0 +1,126 @@
+/* Home.css */
+
+/* Styling for the whole Home container */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+  }
+  
+  /* Styling for the greeting and name */
+  .greeting,
+  .name {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Styling for the tagline */
+  .tagline {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  
+  /* Styling for the profile image */
+  .profile-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling for the about section */
+  .home-about {
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+  
+  /* Styling for the about heading */
+  .about-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Styling for the about text */
+  .about-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Styling for the skills section */
+  .skills {
+    margin-top: 20px;
+  }
+  
+  /* Styling for the skills heading */
+  .skills-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Styling for the skills list */
+  .skills-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  /* Styling for individual skills */
+  .skill {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: #555;
+    border: 1px solid #ccc;
+  }
+  
+  /* Styling for the quotes section */
+  .quotes-section {
+    max-width: 600px;
+    margin: 20px;
+  }
+  
+  /* Styling for the quotes heading */
+  .quotes-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Styling for the quotes list */
+  .quotes-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Styling for individual quotes */
+  .quote-item {
+    margin-bottom: 15px;
+    color: #666;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
